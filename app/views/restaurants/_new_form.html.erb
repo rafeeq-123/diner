@@ -8,8 +8,6 @@
     <%=f.label :description%>
     <%=f.text_area :description, class:"form-control", rows:"3"%>
   </div>
-
-
   <div class="form-group">
     <label for="exampleInputFile">File input</label>
     <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
@@ -42,7 +40,7 @@
       Check me out
     </label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form> -->
-<%=f.submit "Submit", class:"btn btn-primary"%>
+  <%=f.submit "Submit", class:"btn btn-primary"%>
+</form> 
+
 <%end%>
