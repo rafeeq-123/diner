@@ -1,6 +1,6 @@
 <form>
   <div class="form-group">
-  <%= form_for @restaurant do |f| %>
+  <%= form_for @restaurant, :html => {:multipart => true} do |f| %>
   <%=f.label :name, "Restaurant Name"%>
   <%=f.text_field :name, class: "form-control form-text text-muted", placeholder:"Restaurant name"%>
   </div>
@@ -9,9 +9,8 @@
     <%=f.text_area :description, class:"form-control", rows:"3"%>
   </div>
   <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
-    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+   <%=f.label :avatar, "Restaurant Logo"%>
+   <%=f.file_field :avatar, class:"form-control-file"%> 
   </div>
   <fieldset class="form-group">
     <legend>Radio buttons</legend>
