@@ -43,7 +43,11 @@
                     <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
                     <li class="hidden active">
                         <a href="#page-top"></a>
+
                        </li>
+                       <li class="">
+                          <a <%= link_to "Home", restaurants_url, :class => "page-scroll"%> </a>  
+                         </li>
                            <li class="">
                                <a <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "page-scroll"%></a>  
                                </li>
@@ -53,6 +57,7 @@
                            <li class="">
                          <a <%= link_to "New",new_restaurant_path, :class => "page-scroll"%></a>  
                     </li>
+                  
                 </ul>
             </div>
               <div class="row">
