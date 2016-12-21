@@ -49,11 +49,14 @@
                           <a <%= link_to "Home", restaurants_url, :class => "page-scroll"%> </a>  
                          </li>
                            <li class="">
+                           <%if user_signed_in?%>
                                <a <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => "page-scroll"%></a>  
+                               <%else%>
                                </li>
                             <li class="">
                           <a <%= link_to "Login", user_session_path, :class => "page-scroll"%> </a>  
                          </li>
+                         <%end%>
                            <li class="">
                          <a <%= link_to "New",new_restaurant_path, :class => "page-scroll"%></a>  
                     </li>
