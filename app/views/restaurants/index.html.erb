@@ -6,7 +6,7 @@
                                     <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
                                 <% else%>
                             <p><%=image_tag restaurant.avatar_url(:thumb).to_s%></p> 
-                         <p><%=restaurant.description%></p> 
+                         <p style="font-size: 12px;"> <%=restaurant.description%></p> 
                     </div>
                 </div>
      <%end%>
