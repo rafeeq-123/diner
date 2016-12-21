@@ -1,15 +1,14 @@
 <% @restaurants.each do |restaurant|%>
-        <div class="squares">
-             <div class="square_content">
-               <div class="square_table">
-                   <div class="square_table-cell">
-                     <legend><h3 style="color:#51657E;"><%=restaurant.name%></h3></legend>
+        <div class="square">
+             <div class="content">
+               <div class="table">
+                   <div class="table-cell">
+                     <h5 class="text-center" style="color:#51657E;"><%=restaurant.name%></h5>
                                 <%if restaurant.avatar_url(:thumb).to_s.empty?%>
                                     <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
                                 <% else%>
                             <p><%=image_tag restaurant.avatar_url(:thumb).to_s%></p> 
-                         <p style="font-size: 12px;"> <%=restaurant.description%></p>
-
+                    
                          <%end%> 
                     </div>
                 </div>
