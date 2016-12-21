@@ -3,17 +3,26 @@
              <div class="content">
                <div class="table">
                    <div class="table-cell">
-                     <h5 class="text-center" style="color:#51657E;"><%=restaurant.name%></h5>
-                                <%if restaurant.avatar_url(:thumb).to_s.empty?%>
+                     <h5 class="text-center"><%=restaurant.name%></h5>
+                               <%if restaurant.avatar_url(:thumb).to_s.empty?%>
                                     <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
                                 <% else%>
-                            <p><%=image_tag restaurant.avatar_url(:thumb).to_s%></p> 
-                    
+                             
+                             <%=image_tag restaurant.avatar_url(:thumb).to_s%>
+
                          <%end%> 
+<!-- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show  for the show and hide feature js-->
+                     
                     </div>
                 </div>
              </div>
           </div>
+
         <%end%>
    
  <!-- this needs to be badly refactored in helper method!! -->
+ <h2 class="text-center">Locations</h2>
+                <p>Feel free to email me provide some feedback, give me suggestions, or to just say hello!</p>
+<div id="map" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);"><div class="gm-err-container">
+            
+    <div class="gm-err-content"><div class="gm-err-icon"></div></div>
