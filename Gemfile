@@ -18,6 +18,7 @@ gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'carrierwave', '~> 0.11.2'
 gem 'rmagick', '~> 2.15', '>= 2.15.4'
+gem 'pry'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

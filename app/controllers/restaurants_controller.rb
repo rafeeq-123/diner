@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
 	end
 
 	def create
+		binding.pry
 		@restaurant = current_user.restaurants.new(restaurant_params)
 		if @restaurant.save
 			redirect_to @restaurant
@@ -25,5 +26,4 @@ class RestaurantsController < ApplicationController
 	def restaurant_params
 		params.require(:restaurant).permit(:name, :description, :avatar)
 	end
-
 end
