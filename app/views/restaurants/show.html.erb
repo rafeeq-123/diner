@@ -1,10 +1,4 @@
 <%=@restaurant.name%>
 <%=@restaurant.description%>
-<%binding.pry%>
-<% if @restaurant.avatar_url(:thumb).to_s.empty?%>
-<%=image_tag("/spain-image.jpg", :size => "200x200")%>
-
-<% else%>
-<%=image_tag @restaurant.avatar_url(:thumb).to_s%>
-<%end%>
+<%=default_image%>
 
