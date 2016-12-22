@@ -8,6 +8,7 @@
                                     <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
                                 <% else%>        
                              <%=image_tag restaurant.avatar_url(:thumb).to_s%>
+                             <%=link_to "More Info", restaurant(restaurant_url.description)%>
                          <%end%> 
 <!-- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show  for the show and hide feature js-->                 
                     </div>
