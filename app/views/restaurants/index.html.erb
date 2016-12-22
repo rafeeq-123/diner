@@ -7,8 +7,7 @@
                                <%if restaurant.avatar_url(:thumb).to_s.empty?%>
                                     <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
                                 <% else%>        
-                              <%=image_tag restaurant.avatar_url(:thumb).to_s%>
-                             <%=link_to "More Info", restaurant_url(restaurant.description)%>
+                             <%=image_tag restaurant.avatar_url(:thumb).to_s%>
                          <%end%> 
 <!-- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show  for the show and hide feature js-->                 
                     </div>
@@ -29,7 +28,7 @@
                                             <div class="gm-err-icon">
                                                 <script>
                                                  function initMap() {
-                                                    var myLatLng = <%=iteration%>; 
+                                                    var myLatLng = {lat:48.8566, lng:2.3522}; 
                                                     var map = new google.maps.Map(document.getElementById('map'), {
                                                         zoom: 4,
                                                         center: myLatLng
@@ -47,9 +46,9 @@
                                </div>
                          </div>
   <!--   </section>  -->
-                          <div class="text-center ">
-                                <%=paginate @restaurants%>
-                            </div>
+  <div class="text-center">
+    <%=paginate @restaurants%>
+</div>
 
 
 
