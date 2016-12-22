@@ -16,22 +16,32 @@
           </div>
 
         <%end%>
-        <section id="contact" class="container content-section text-center">
+        <!-- <section id="contact" class="container content-section text-center">
              <div class="row">
                  <div class="col-lg-8 col-lg-offset-2">
                      <h2 class="text-center">Locations</h2>
-                          <p>Where are we? </p>
-                              <p>Here is a sneak-peak of some of the distantions</p>
-                               <div id="map" style="position: relative; overflow: hidden;"><div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);">
-                               <div class="gm-err-container">
-                               
-
-                          </div>
-                     </div>
-             </div>
-        </div>
-        <!-- I need to add either geocoder or html api geolocation -->
-    </section>
+                          <p>Where are we? </p> -->
+                              <h2 class="text-center">Here is a sneak-peak of some of the distantions</h2>
+                                 <p class="text-center"> Here are some of the current locations</p>  
+                                    <div id="map" style="position: relative; overflow: hidden;">
+                                        <div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);">
+                                            <div class="gm-err-icon">
+                                                <script>
+                                                 var map;
+                                                function initMap() {
+                                                    map = new google.maps.Map(document.getElementById('map'), {
+                                                    center: {lat: -34.397, lng: 150.644},
+                                                    zoom: 8
+                                                    });
+                                                }
+                                                </script>
+                                            <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.secrets.google_api%>&callback=initMap" async defer>                          
+                                        </script>
+                                    </div>
+                               </div>
+                         </div>
+  <!--   </section>  -->
    
- <!-- this needs to be badly refactored in helper method!! -->
+ 
+
  
