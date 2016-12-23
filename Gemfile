@@ -17,7 +17,9 @@ gem 'omniauth-facebook'
 gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'carrierwave', '~> 0.11.2'
-gem 'rmagick', '~> 2.15', '>= 2.15.4'
+gem 'mini_magick', '~> 4.5', '>= 4.5.1'
+gem 'kaminari'
+gem 'geocoder'
 gem 'pry'
 
 group :development, :test do
