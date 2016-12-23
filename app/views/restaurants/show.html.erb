@@ -13,7 +13,7 @@
                                         <div class="gm-err-icon">
                                             <script>
                                                  function initMap() {
-                                                    var myLatLng = {lat:<%=@restaurant.latitude%>, lng}; 
+                                                    var myLatLng = {lat:<%=@restaurant.latitude%>, lng:<%=@restaurant.longitude%>}; 
                                                     var map = new google.maps.Map(document.getElementById('map'), {
                                                         zoom: 4,
                                                         center: myLatLng
