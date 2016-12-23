@@ -3,19 +3,18 @@
              <div class="content">
                <div class="table">
                    <div class="table-cell">
-                     <h5 class="text-center"><%=restaurant.name%></h5>
-                               <%if restaurant.avatar_url(:thumb).to_s.empty?%>
-                                    <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
-                                <% else%>        
-                             <%=image_tag restaurant.avatar_url(:thumb).to_s%>
-                         <%end%> 
-<!-- http://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_toggle_hide_show  for the show and hide feature js-->                 
+                     <h5 class="text-center"><%=link_to "#{restaurant.name}", restaurant_url(restaurant.id), {style: "color: white"}%></h5>
+                           <%if restaurant.avatar_url(:thumb).to_s.empty?%>
+                                <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
+                                    <% else%>        
+                                        <%= link_to image_tag restaurant.avatar_url(:thumb).to_s, restaurant_url(restaurant.id)%> 
+                            <%end%>                                   
+                        </div>
                     </div>
                 </div>
-             </div>
-          </div>
-
+            </div>
         <%end%>
+  
         <!-- <section id="contact" class="container content-section text-center">
              <div class="row">
                  <div class="col-lg-8 col-lg-offset-2">
