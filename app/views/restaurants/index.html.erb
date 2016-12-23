@@ -7,8 +7,10 @@
                            <%if restaurant.avatar_url(:thumb).to_s.empty?%>
                                 <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
                                     <% else%>        
-                                        <%= link_to image_tag restaurant.avatar_url(:thumb).to_s, restaurant_url(restaurant.id)%> 
-                            <%end%>                                   
+                                        <%= link_to image_tag(restaurant.avatar_url(:thumb), :class => "hover"), restaurant_url(restaurant.id) %>
+ 
+
+                            <%end%>                         
                         </div>
                     </div>
                 </div>
@@ -44,12 +46,9 @@
                                     </div>
                                </div>
                          </div>
-  <!--   </section>  -->
   <div class="text-center">
     <%=paginate @restaurants%>
 </div>
-
-
 
   
  
