@@ -8,3 +8,25 @@
         </div>
       </div>
    </section>
+   <div id="map" style="position: relative; overflow: hidden;">
+                                <div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);">
+                                        <div class="gm-err-icon">
+                                            <script>
+                                                 function initMap() {
+                                                    var myLatLng = {lat:<%=@restaurant.latitude%>, lng}; 
+                                                    var map = new google.maps.Map(document.getElementById('map'), {
+                                                        zoom: 4,
+                                                        center: myLatLng
+                                                    });
+                                                    var marker = new google.maps.Marker({
+                                                        position: myLatLng,
+                                                        map: map,
+                                                      title: 'Hello World!'
+                                                    });
+                                                }
+                                                </script>
+                                            <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.secrets.google_api%>&callback=initMap" async defer>                          
+                                        </script>
+                                    </div>
+                               </div>
+                         </div>
