@@ -7,27 +7,19 @@
                            <%if restaurant.avatar_url(:thumb).to_s.empty?%>
                                 <p><%= image_tag("/spain-image.jpg", :size => "200x200")%></p>
                                     <% else%>        
-                                        <%= link_to image_tag(restaurant.avatar_url(:thumb), :class => "hover"), restaurant_url(restaurant.id) %>
- 
-
-                            <%end%>                         
+                                        <%= link_to image_tag(restaurant.avatar_url(:thumb), :class => "hover"), restaurant_url(restaurant.id), title:restaurant.name %>
+                                    <%end%>                         
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        <%end%>
-  
-        <!-- <section id="contact" class="container content-section text-center">
-             <div class="row">
-                 <div class="col-lg-8 col-lg-offset-2">
-                     <h2 class="text-center">Locations</h2>
-                          <p>Where are we? </p> -->
-                              <h2 class="text-center">Here is a sneak-peak of some of the distantions</h2>
-                                 <p class="text-center"> Here are some of the current locations</p>  
-                                    <div id="map" style="position: relative; overflow: hidden;">
-                                        <div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);">
-                                            <div class="gm-err-icon">
-                                                <script>
+                <%end%>
+                    <h2 class="text-center">Here is a sneak-peak of some of the distantions</h2>
+                        <p class="text-center"> Here are some of the current locations</p>  
+                            <div id="map" style="position: relative; overflow: hidden;">
+                                <div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);">
+                                        <div class="gm-err-icon">
+                                            <script>
                                                  function initMap() {
                                                     var myLatLng = {lat:48.8566, lng:2.3522}; 
                                                     var map = new google.maps.Map(document.getElementById('map'), {
@@ -46,9 +38,9 @@
                                     </div>
                                </div>
                          </div>
-  <div class="text-center">
-    <%=paginate @restaurants%>
-</div>
+                        <div class="text-center">
+                            <%=paginate @restaurants%>
+                        </div>
 
   
  
