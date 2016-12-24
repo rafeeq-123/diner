@@ -6,6 +6,6 @@ belongs_to :user
 geocoded_by :address 
 after_validation :geocode
 mount_uploader :avatar, AvatarUploader
-has_many :votes, :through => :users
-
+has_many :votes, through: :users
+has_many :votes
 end
