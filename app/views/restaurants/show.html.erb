@@ -6,6 +6,7 @@
           <h6>Time Left:<%=@restaurant.event_time - Time.now%></h6>
             <h5>Event Description</h5>
           <p><%=@restaurant.description%></p> 
+          <p><%=@restaurant.votes.count%></p>
           <%=render "votes/votes_form"%>
         </div>
       </div>
