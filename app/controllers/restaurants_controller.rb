@@ -1,6 +1,6 @@
 class RestaurantsController < ApplicationController
 	def index
-		@restaurants = Restaurant.all
+		@restaurants = Restaurant.order(:name).page(params[:page]).per(6)
 	end
 
 	def new
@@ -8,7 +8,6 @@ class RestaurantsController < ApplicationController
 	end
 
 	def create
-		binding.pry
 		@restaurant = current_user.restaurants.new(restaurant_params)
 		if @restaurant.save
 			redirect_to @restaurant
@@ -24,6 +23,10 @@ class RestaurantsController < ApplicationController
 	private
 
 	def restaurant_params
-		params.require(:restaurant).permit(:name, :description, :avatar)
+		params.require(:restaurant).permit(:name, :description, :avatar, :address, :event_time, votes_attributes: [:id, :likes])
+	end
+
+	def google_api
+		Rails.application.secrets.google_api
 	end
 end
