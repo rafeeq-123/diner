@@ -15,13 +15,13 @@ class VotesController < ApplicationController
     		format.json {render json: @restaurant, status: :created, location: @restaurant}
     	else
     		format.html { render action: "show" }
-        format.json { render json: @user.errors, status: :unprocessable_entity }	
+        format.json { render json: @restaurants, notice: "Only one like please"}	
       end
     end
 	end
 
 	private
 	def vote_params
-		params.require(:vote).permit(:like)
+		params.require(:vote).permit(:like +=1)
 	end
 end
