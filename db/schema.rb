@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 20161223172620) do
   create_table "votes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "restaurant_id"
-    t.integer  "likes"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer  "likes",         default: 1
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.index ["restaurant_id"], name: "index_votes_on_restaurant_id", using: :btree
     t.index ["user_id"], name: "index_votes_on_user_id", using: :btree
   end
