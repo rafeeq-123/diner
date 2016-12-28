@@ -1,27 +1,28 @@
 class VotesController < ApplicationController
 	
-	def new
-		@vote = Vote.new
-	end
+  def new
+	 @vote = Vote.new
+  end
 
-	def create
-		@restaurant = Restaurant.find(params[:restaurant_id])
+  def create
+    @restaurant = Restaurant.find(params[:restaurant_id])
     @vote = @restaurant.votes.new(vote_params)
     @vote.user_id = current_user.id
     respond_to do |format|
-    	if @vote.save
-    		format.html { redirect_to @restaurant, notice: "Thank you for your support!"}
-    		format.js {}
-    		format.json {render json: @restaurant, status: :created, location: @restaurant}
+    	if @vote.save 
+    	  format.html { redirect_to @restaurant, notice: "Thank you for your support!"}
+    	  format.js {}
+    	  format.json {render json: @restaurant, status: :created, location: @restaurant}
     	else
-    		format.html { render action: "show" }
-        format.json { render json: @restaurants, notice: "Only one like please"}	
+    	  format.html { redirect_to @restaurant, notice: "Only one like please"}
+    	  format.js {}
+        format.json { render json: @restaurant, notice: "Only one like please"}  				
+        end
       end
     end
-	end
 
-	private
+ private
 	def vote_params
-		params.require(:vote).permit(:like +=1)
+	  params.require(:vote).permit(:like)
 	end
 end
