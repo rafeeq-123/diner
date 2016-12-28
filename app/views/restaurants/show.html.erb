@@ -1,35 +1,16 @@
 <section id="about" class="container content-section text-center">
   <div class="row">
       <div class="col-lg-8 col-lg-offset-2">
-        <legend><h1 style="color:#51657E;"><%=@restaurant.name%></h1></legend>
+        <legend><h1 style="color:grey;"><%=@restaurant.name%></h1></legend>
           <p><%=default_image%></p>
           <h6>Time Left:<%=@restaurant.event_time - Time.now%></h6>
             <h5>Event Description</h5>
+            <div class="border_wrapper" >
           <p><%=@restaurant.description%></p> 
-          <p><%=@restaurant.votes.count%></p>
+          <label>Likes:<div class="numberCircle text-center"><%=@restaurant.votes.count%></div>  </label>
+          </div>
           <%=render "votes/votes_form"%>
         </div>
       </div>
    </section>
-   <div id="map" style="position: relative; overflow: hidden;">
-                                <div style="height: 100%; width: 100%; position: absolute; background-color: rgb(229, 227, 223);">
-                                        <div class="gm-err-icon">
-                                            <script>
-                                                 function initMap() {
-                                                    var myLatLng = {lat:<%=@restaurant.latitude%>, lng:<%=@restaurant.longitude%>}; 
-                                                    var map = new google.maps.Map(document.getElementById('map'), {
-                                                        zoom: 12,
-                                                        center: myLatLng
-                                                    });
-                                                    var marker = new google.maps.Marker({
-                                                        position: myLatLng,
-                                                        map: map,
-                                                      title: 'Hello World!'
-                                                    });
-                                                }
-                                                </script>
-                                            <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.secrets.google_api%>&callback=initMap" async defer>                          
-                                        </script>
-                                    </div>
-                               </div>
-                         </div>
+  <%=render "restaurants/show_map"%>
