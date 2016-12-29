@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223172620) do
+ActiveRecord::Schema.define(version: 20161229013557) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "donations", force: :cascade do |t|
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "amount",        default: 5
+    t.integer  "user_id"
+    t.integer  "restaurant_id"
+  end
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
@@ -50,7 +58,7 @@ ActiveRecord::Schema.define(version: 20161223172620) do
   create_table "votes", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "restaurant_id"
-    t.integer  "likes",         default: 1
+    t.integer  "likes",         default: 0, null: false
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.index ["restaurant_id"], name: "index_votes_on_restaurant_id", using: :btree

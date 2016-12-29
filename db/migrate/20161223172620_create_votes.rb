@@ -3,7 +3,7 @@ class CreateVotes < ActiveRecord::Migration[5.0]
     create_table :votes do |t|
     	t.belongs_to :user
     	t.belongs_to :restaurant
-    	t.integer :likes, :default => 1
+    	t.integer :likes, default: 0,  null: false
       t.timestamps
     end
   end
