@@ -4,11 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
-gem 'devise'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
-
 
 gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
@@ -20,6 +18,8 @@ gem 'carrierwave', '~> 0.11.2'
 gem 'mini_magick', '~> 4.5', '>= 4.5.1'
 gem 'kaminari'
 gem 'geocoder'
+gem 'stripe'
+gem 'devise'
 gem 'pry'
 
 group :development, :test do

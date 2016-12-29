@@ -24,7 +24,7 @@ class RestaurantsController < ApplicationController
 	private
 
 	def restaurant_params
-		params.require(:restaurant).permit(:name, :description, :avatar, :address, :event_time, votes_attributes: [:id, :likes], donations_attributes: [:id, :amount])
+		params.require(:restaurant).permit(:name, :description, :avatar, :address, :event_time, :availability, votes_attributes: [:id, :likes], donations_attributes: [:id, :amount])
 	end
 
 	def google_api

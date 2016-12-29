@@ -3,7 +3,8 @@
   <head>
     <title>The Pop-Up Diner</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload'%>
     <link href="https://blackrockdigital.github.io/startbootstrap-grayscale/css/grayscale.min.css" rel="stylesheet">
   </head>
  
@@ -61,8 +62,7 @@
                       </li>
                      <li class="">
                       <a <%= link_to "Find", restaurants_url, :class => "page-scroll"%></a>  
-                  </li>
-                  
+                  </li>            
                 </ul>
             </div>
               <div class="row">
@@ -73,7 +73,7 @@
                                 <% elsif alert_type == "alert" %>
                                   <div class="alert alert-danger">
                                     <% else %>
-                               <div class="alert-dismissible-<%= "#{alert_type}" %>">
+                               <div class="alert-dismissible<%= "#{alert_type}"%>" >
                               <% end %>
                            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                         <ul>
@@ -81,11 +81,12 @@
                    <%= msg %>
                  </li>
               </ul>
-         <% end %>
-       </div>
+          <% end %>
+         </div>
+      </div>
+     </div>
     </div>
-      <!-- /.navbar-collapse -->
-        </div>
+    </div>
         <!-- /.container -->
     </nav>
 

@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :restaurants
   has_many :votes
   has_many :votes, through: :restaurants
+  has_many :donations
 
     def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|

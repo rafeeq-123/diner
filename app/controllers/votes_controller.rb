@@ -10,11 +10,11 @@ class VotesController < ApplicationController
     @vote.user_id = current_user.id
     respond_to do |format|
     	if @vote.save 
-    	  format.html { redirect_to @restaurant, notice: "Thank you for your support!"}
+    	  format.html { redirect_to @restaurant, notice: "Thank you for your support! Your like was added"}
     	  format.js {}
     	  format.json {render json: @restaurant, status: :created, location: @restaurant}
     	else
-    	  format.html { redirect_to @restaurant, notice: "Only one like please"}
+    	  format.html { redirect_to @restaurant, notice: "user associated account with email: #{current_user.email} has already like this item"}
     	  format.js {}
         format.json { render json: @restaurant, notice: "Only one like please"}  				
         end

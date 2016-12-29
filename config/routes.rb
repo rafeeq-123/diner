@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 	root "welcome#index"
   resources :restaurants do
   	resources :votes
+    resources :donations
   end
   resources :restaurants
   devise_scope :user do
