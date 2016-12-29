@@ -7,7 +7,8 @@
             <h5>Event Description</h5>
             <div class="border_wrapper" >
           <p><%=@restaurant.description%></p> 
-          <label>Likes:<div class="numberCircle text-center"><%=@restaurant.votes.count%></div>  </label>
+          <label>Likes:<div class="numberCircle text-center"><%=@restaurant.votes.count%></div></label>
+          <label>Donations:<div class="numberCircle text-center"><%=@restaurant.donations.count * 5%></div></label>
           </div>
           <%=render "votes/votes_form"%>
           <%=render "donations/donations_form"%>
