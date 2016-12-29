@@ -4,15 +4,21 @@
         <legend><h1 style="color:white;"><%=@restaurant.name%></h1></legend>
           <p><%=default_image%></p>
           <h6>Event Time: <%=@restaurant.event_time %></h6>
-          <h6>Tickets lefts:<%=no_ticket_info%>
-          <%= select_tag(:restaurant,
-               options_for_select([['Euro', 2], ['Pound', 3], ['Colombian Peso', 4]]),{ :class => "btn btn-primary btn-sm" }) %></h6>
+          <h6> There is <%=@restaurant.availability%> Get Tickets: </h6>
+          <%= select_tag(:user_id,
+               options_for_select([["Get Tickets"], ["One ticket", 1 ], ["Two tickets", 2]]),{ :class => "btn btn-primary btn-sm" }) %> </h6>
+              <% if 1 %>
+                <%=@restaurant.availability - 1%>
+              <%elsif 2%>
+                <%= @restaurant.availability - 2%>
+              <%elsif%>
+                <%= @restaurant.availability.nil? "N/A"%>
+           <%end%>
             <h5>Event Description</h5>
             <div class="border_wrapper" >
           <p><%=@restaurant.description%></p> 
           <label>Likes:<div class="numberCircle text-center"><%=@restaurant.votes.count%></div></label>
           <label>Donations:<div class="numberCircle text-center"><%=@restaurant.donations.count * 5%></div></label>
-          <label>Tickets:<div class="numberCircle text-center"><%=no_ticket_info%></div></label>
 
           </div>
           <%=render "votes/votes_form"%>
