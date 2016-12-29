@@ -22,6 +22,7 @@ class RestaurantsController < ApplicationController
 	end
 
 	def user_stats
+  	@restaurant = Restaurant.where(user_id: current_user.id)
 	end
 
 	private
