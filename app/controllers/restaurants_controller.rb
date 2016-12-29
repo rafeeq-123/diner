@@ -21,6 +21,9 @@ class RestaurantsController < ApplicationController
 		@restaurant = Restaurant.find(params[:id])
 	end
 
+	def user_stats
+	end
+
 	private
 
 	def restaurant_params
