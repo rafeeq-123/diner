@@ -1,7 +1,8 @@
 <div class="text-center">
 		<label> Online status:</label><h3 style="text-shadow: 2px 2px; color:#16d97e;" class="blink_me"><%=online%></h3>
 		<label> Number of restaurants:</label><h3 class="graph"><%=@restaurant.count%></h3>
-		<label> Number of likes:</label><h3 class="graph"><%=@vote.count%></h3>
+		<label> Number things you have liked:</label><h3><%=@vote.count%></h3>
+		<label> Number of likes on your restaurants:</label><h3 class="graph"><%=@vote.collect(&:likes)%></h3>
 		<label> Credit left:</label><h3><%=@donation.collect(&:amount)[0]%></h3>
 
 
