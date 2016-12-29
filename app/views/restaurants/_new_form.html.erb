@@ -1,24 +1,56 @@
-  <div class="form-group">
-  <%= form_for @restaurant, :html => {:multipart => true} do |f| %>
-  <%=f.label :name, "Restaurant Name"%>
-  <%=f.text_field :name, class: "form-control form-text text-muted", placeholder:"Restaurant name"%>
-  </div>
-  <div class="form-group">
+    <div class="row">
+      <div class="col-xs-10 col-xs-offset-1">
+          <% if @restaurant.errors.full_messages.any? %>
+              <% @restaurant.errors.full_messages.each do |error_message| %>
+              <ul>
+                <div class="alert alert-danger <%= "#{error_message}" %>">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+                  </ul>
+                        <%= error_message %>          
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+         </div>
+      <div>
+      <%= form_for @restaurant, :html => {:multipart => true} do |f| %>
+
+      <%=f.label :name, "Restaurant Name"%>
+      <%=f.text_field :name, class: "form-control", placeholder:"Restaurant name"%>
+      </div>
+
+  <div>
     <%=f.label :description%>
-    <%=f.text_area :description, class:"form-control", rows:"3"%>
+    <%=f.text_area :description, class:"form-control"%>
   </div>
-  <div class="form-group">
+
+  <div>
    <%=f.label :avatar, "Restaurant Logo"%>
    <%=f.file_field :avatar, class:"form-control-file"%> 
   </div>
-  <fieldset class="form-group">
+
+  <div>
+   <%=f.label :address, "Restaurant Location"%>
+   <%=f.text_field :address, class:"form-control"%> 
+  </div>
+
+  <div>
+   <%=f.label :event_time, "What's the time of the event?"%>
+   <%=f.datetime_field :event_time, class:"form-control"%> 
+  </div>
+
+  <div>
+   <%=f.label :availablity, "How many tickets do you have?"%>
+   <%=f.datetime_field :availablity, class:"form-control"%> 
+  </div>
+
+  <fieldset>
     <legend><label style="color:#51657E;">Support Pop-Ups</label></legend>
   </fieldset>
-  <div class="form-check">
-    <label class="form-check-label">
+
+  <div>
       <input type="checkbox" class="form-check-input">
       Would you like to also sponser other pop-ups?
-    </label>
   </div>
   <%=f.submit "Submit", class:"btn btn-primary"%>
 
