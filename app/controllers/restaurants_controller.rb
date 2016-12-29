@@ -24,8 +24,7 @@ class RestaurantsController < ApplicationController
 	def user_stats
   	@restaurant = Restaurant.where(user_id: current_user.id)
   	@vote = Vote.where(user_id: current_user.id)
-  	
-
+  	@donation = Donation.where(user_id: current_user.id)
 	end
 
 	private
