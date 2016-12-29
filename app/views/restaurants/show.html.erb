@@ -3,7 +3,7 @@
       <div class="col-lg-8 col-lg-offset-2">
         <legend><h1 style="color:grey;"><%=@restaurant.name%></h1></legend>
           <p><%=default_image%></p>
-          <h6>Time Left:<%=@restaurant.event_time - Time.now%></h6>
+          <h6>Event Time: <%=@restaurant.event_time %></h6>
             <h5>Event Description</h5>
             <div class="border_wrapper" >
           <p><%=@restaurant.description%></p> 
