@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 	devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+  get "restaurants/user_stats"
   get "welcome/index"
   get "welcome/sponser"
 	root "welcome#index"
