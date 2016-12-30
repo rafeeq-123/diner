@@ -13,8 +13,8 @@ services:
       - db
       # links:
       #   - db
-    environment:
-      DB_NAME: diner
-      DB_HOST: db
+    # environment:
+    #   DB_NAME: diner
+    #   DB_HOST: db
 
-    container_name: diner-app
+    # container_name: diner-app

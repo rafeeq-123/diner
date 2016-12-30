@@ -5,15 +5,7 @@
           <p><%=default_image%></p>
           <h6>Event Time: <%=@restaurant.event_time %></h6>
           <h6> There is <%=@restaurant.availability%> Get Tickets: </h6>
-          <%= select_tag(:user_id,
-               options_for_select([["Get Tickets"], ["One ticket", 1 ], ["Two tickets", 2]]),{ :class => "btn btn-primary btn-sm" }) %> </h6>
-              <% if 1 %>
-                <%=@restaurant.availability - 1%>
-              <%elsif 2%>
-                <%= @restaurant.availability - 2%>
-              <%elsif%>
-                <%= @restaurant.availability.nil? "N/A"%>
-           <%end%>
+              
             <h5>Event Description</h5><br>
             <div class="border_wrapper">
           <p><%=@restaurant.description%></p> 
