@@ -23,4 +23,16 @@ module RestaurantsHelper
   		"N/A"	
   	end
   end
+
+  def online
+		if user_signed_in?
+		 "Online"
+		else
+			"Not Online and you should not be here, contact developer"
+		end
+	end
+	def votes_count
+		array = @vote.collect(&:likes)
+		array.inject(0){|sum,x| sum + x }
+	end
 end
