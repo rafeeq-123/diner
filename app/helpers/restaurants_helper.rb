@@ -54,4 +54,18 @@ module RestaurantsHelper
 		last_time.created_at
 	end
 
+	def num
+		num = @restaurant.count 
+		@num = num
+	end
+
+	def all_restaurant
+		restaurant = Restaurant.all
+	  @num_res = restaurant.count
+	end
+
+	def all_votes
+		binding.pry
+		vote = Vote.all
+	end
 end
