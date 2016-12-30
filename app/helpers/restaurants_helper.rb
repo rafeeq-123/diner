@@ -31,8 +31,27 @@ module RestaurantsHelper
 			"Not Online and you should not be here, contact developer"
 		end
 	end
+	
 	def votes_count
 		array = @vote.collect(&:likes)
 		array.inject(0){|sum,x| sum + x }
 	end
+
+	def activity
+		if last_restaurant_created < 1.hours && @restaurant.count >= 1 && votes_count >= 5
+			"VERY active"
+		elsif last_restaurant_created ==  Date.today && @restaurant.count >= 1 && votes_count >= 3
+			"Active"
+		else
+			"Not very active"	
+	  end
+  end
+
+	private
+
+	def last_restaurant_created
+		last_time = @restaurant.last
+		last_time.created_at
+	end
+
 end
