@@ -1,5 +1,5 @@
 <%= form_for([@restaurant, @restaurant.votes.build]) do |f| %>
-    <%= f.hidden_field(:likes)%> 
+    <%= f.hidden_field (:likes)%> 
  <%= f.submit "Like Me", class:"btn btn-primary btn-lg btn-block" %> 
  <% end %>
 

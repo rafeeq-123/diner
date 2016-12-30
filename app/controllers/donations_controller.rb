@@ -25,6 +25,10 @@ class DonationsController < ApplicationController
       end
     end
 
+    def show
+      @donation = Donation.where(user_id: current_user.id)
+    end
+
   private
   def donation_params
     params.require(:donation).permit(:amount)

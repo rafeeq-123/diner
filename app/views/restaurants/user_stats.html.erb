@@ -1,16 +1,20 @@
 <div class="text-center">
    <%all_restaurant%>
-   <%num%>
+    <%num%>
+    <%all_votes%>
+    <%vote_num%>
+<div class="jumbotron jumbotron-fluid">
+    <h1 class="display-3" style="color:black;">User Stats</h1>
+  </div>
 
 		<label> Credit:</label><h3><%=@donation.collect(&:amount)[0]%></h3>
 		<label> Online status:</label><h3 style="text-shadow: 2px 2px; color:#16d97e;" class="blink_me"><%=online%></h3>		
-		<label> Number things you have liked:</label><h3><%=@vote.count%></h3>
-		<label> Number of likes on your restaurants:</label><h3><%=votes_count%></h3>
-
-		<h1><u>Graph</u></h1>
-		<h3>How Active Are You?</h3>
-		<%=activity%>
-		<h3> Number of restaurants:</h3>
+		<h3><u>How Active Are You?</u></h3>
+		      <%=activity%>
+		<h3><u> Your Number of Restaurants vs. All Users</u></h3
 
 </div>
- <%= pie_chart({"Your Restaurants" => "#{@num.inspect}", "Compared Other Users" => "#{@num_res}"}) %>
+ <%= pie_chart({"Your Restaurants" => "#{@num}", "Compared Other Users" => "#{@num_res}"}) %>
+
+ <h3><u>Votes Compared to All Users</u> </h3><br>
+ <%= pie_chart({"Your Restaurants" => "#{@numv}", "Compared Other Users" => "#{@all_votes}"}) %>

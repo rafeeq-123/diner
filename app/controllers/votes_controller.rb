@@ -8,8 +8,9 @@ class VotesController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @vote = @restaurant.votes.new(vote_params)
     @vote.user_id = current_user.id
+    @vote.increment(:likes, by = 1).save
     respond_to do |format|
-    	if @vote.save 
+    	if @vote.save
     	  format.html { redirect_to @restaurant, notice: "Thank you for your support! Your like was added"}
     	  format.js {}
     	  format.json {render json: @restaurant, status: :created, location: @restaurant}
@@ -23,6 +24,6 @@ class VotesController < ApplicationController
 
  private
 	def vote_params
-	  params.require(:vote).permit(:like)
+	  params.require(:vote).permit(:likes)
 	end
 end

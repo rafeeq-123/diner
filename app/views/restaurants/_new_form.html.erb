@@ -3,7 +3,6 @@
               <% @restaurant.errors.full_messages.each do |error_message| %>
               <ul>
                 <div class="alert alert-danger<%="#{error_message}"%>" >
-                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
                   </ul>
                         <%= error_message %>          
                   <% end %>
