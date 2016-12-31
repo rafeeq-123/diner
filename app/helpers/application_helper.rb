@@ -6,7 +6,7 @@ module ApplicationHelper
 
 	def ready_for_credit?
 		#change votes to 4 after adding funtionality
-		user_signed_in? && donation_count == 0 && votes >= 1 && current_user.restaurants.count >= 2
+		user_signed_in? && donation_count == 0 && votes >= 4 && current_user.restaurants.count >= 2
 	end
 
 	def votes
