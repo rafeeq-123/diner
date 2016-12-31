@@ -66,11 +66,18 @@
                   </li>  
                   <li class="">
                   <%if user_has_stats?%>
-                      <a <%= link_to "User Stats", restaurants_user_stats_url, :class => "page-scroll blink_me"%></a> 
+                      <a <%= link_to "User Stats", restaurants_user_stats_url, :class => "page-scroll"%></a> 
                       <%else%> 
                       <a title="No stats yet. Get envolved!">No stats Yet</a>
                       <%end%>
-                  </li>   
+                  </li>  
+                  <li class="">
+                  <% if ready_for_credit?%>
+                        <a <%= link_to "Credit", donations_credit_url, :class => "page-scroll"%></a>  
+                        <%else%>
+                        <a></a>
+                      <%end%>
+                    </li> 
 
                 </ul>
             </div>
