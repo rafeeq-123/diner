@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get "welcome/index"
   get "welcome/sponser"
 	root "welcome#index"
+  get "donations/credit"
+  post "donations/add_credit"
   resources :restaurants do
   	resources :votes
     resources :donations

@@ -4,3 +4,4 @@ function blinker() {
 }
 
 setInterval(blinker, 1500);
+
