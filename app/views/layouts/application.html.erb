@@ -31,8 +31,8 @@
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
+                      </button>
+                    <a class="navbar-brand page-scroll" href="#page-top">
                     <i class="fa fa-play-circle"></i> <span class="light">The Pop-Up Diner</span> 
                 </a>
             </div>
@@ -65,8 +65,13 @@
                       <a <%= link_to "Find", restaurants_url, :class => "page-scroll"%></a>  
                   </li>  
                   <li class="">
-                      <a <%= link_to "User Stats", restaurants_user_stats_url, :class => "page-scroll"%></a>  
-                  </li>           
+                  <%if user_has_stats?%>
+                      <a <%= link_to "User Stats", restaurants_user_stats_url, :class => "page-scroll"%></a> 
+                      <%else%> 
+                      <a>No stats Yet</a>
+                      <%end%>
+                  </li>   
+
                 </ul>
             </div>
               <div class="row">
