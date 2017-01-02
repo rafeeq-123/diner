@@ -23,7 +23,7 @@ class DonationsController < ApplicationController
 				format.js {}
 				format.json {render json: @restaurant, status: :created, location: @restaurant}
 		  else
-				format.html { redirect_to @restaurant, notice: "The associated account with email #{current_user.email} and account balance #{amount_sum}"}
+				format.html { redirect_to @restaurant, notice: "Sorry, the associated account with email: #{current_user.email} has an account balance of #{amount_sum}"}
 				format.js {}
 				format.json { render json: @restaurant, notice: "Users are only able to donate once"}
 			end
