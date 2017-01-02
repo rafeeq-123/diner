@@ -24,12 +24,12 @@ module RestaurantsHelper
 	end
 	
 	def votes_count
-		vote_array = @vote.collect(&:likes)
+ 		vote_array = @vote.collect(&:likes)
 		vote_array.inject(0){|sum,x| sum + x }
 	end
 
 	def activity
-		if last_restaurant_created < 1.hours && @restaurant.count >= 1 && votes_count >= 5
+		if last_restaurant_created < 30.minutes.ago && @restaurant.count >= 1 && votes_count >= 5
 			"VERY active"
 		elsif last_restaurant_created ==  Date.today && @restaurant.count >= 1 && votes_count >= 3
 			"Active"
