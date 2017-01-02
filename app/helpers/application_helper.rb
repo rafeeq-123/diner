@@ -5,7 +5,6 @@ module ApplicationHelper
 	end
 
 	def ready_for_credit?
-		binding.pry
 		#only ranging max  count of instances
 		current_user_count = current_user.donations.count
 		user_signed_in? &&
