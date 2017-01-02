@@ -24,8 +24,8 @@ module RestaurantsHelper
 	end
 	
 	def votes_count
-		array = @vote.collect(&:likes)
-		array.inject(0){|sum,x| sum + x }
+		vote_array = @vote.collect(&:likes)
+		vote_array.inject(0){|sum,x| sum + x }
 	end
 
 	def activity
@@ -37,8 +37,6 @@ module RestaurantsHelper
 			"Not very active"	
 	  end
   end
-
-	private
 
 	def last_restaurant_created
 		last_time = @restaurant.last
@@ -63,4 +61,5 @@ module RestaurantsHelper
 	def vote_num
 		@numv = votes_count
 	end
+
 end
