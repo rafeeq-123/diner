@@ -6,10 +6,13 @@ module ApplicationHelper
 
 	def ready_for_credit?
 		#only ranging max  count of instances
-		current_user_count = current_user.donations.count
-		user_signed_in? &&
-	  current_user.donations.collect(&:amount)[0..current_user_count].inject(0){|sum,x| sum + x } == 0 && 
-	  user_vote && user_restaurant && user_donation
+		if user_signed_in? 
+			current_user_count = current_user.donations.count
+		  current_user.donations.collect(&:amount)[0..current_user_count].inject(0){|sum,x| sum + x } == 0 && 
+		  user_vote && user_restaurant && user_donation
+		else
+			current_user
+		end
 	end
 
 	def votes
@@ -22,18 +25,20 @@ module ApplicationHelper
 		don_countable = @restaurant.donations.count
 		@restaurant.donations.collect(&:amount)[0..don_countable].inject(0){|sum,x| sum + x }
 	end
+
 	def user_vote
 		vote_count = current_user.votes.count
-		vote_count == [5..8]|| vote_count == [8..15]
+		(5..10).include?(vote_count) 
 	end
 
 	def user_restaurant
 		restaurant_count = current_user.restaurants.count 
-		restaurant_count == [5..10] || restaurant_count == [20..25]
+		(2..10).include?(restaurant_count) 
 	end
 
 	def user_donation
+		#never letting a user have more than more than 2 donations
 		donation_count = current_user.donations.count 
-		donation_count == 1 || donation_count ==  2	
+		(1..2).include?(donation_count)
 	end
 end
