@@ -73,7 +73,7 @@
                   </li>  
                   <li class="">
                   <% if ready_for_credit?%>
-                        <a <%= link_to "Credit", donations_credit_url, :class => "page-scroll"%></a>  
+                        <a <%= link_to "Donate again!", donations_credit_url, :class => "page-scroll blink_me", title:"Congrats!"%></a>  
                         <%else%>
                         <a></a>
                       <%end%>
