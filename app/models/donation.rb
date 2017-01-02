@@ -12,18 +12,17 @@ class Donation < ApplicationRecord
 	end
 
 	def user_vote
-		binding.pry
 		vote_count = user.votes.count
-		(1..10).include?(vote_count) 
+		(5..10).include?(vote_count) 
 	end
 
 	def user_restaurant
 		restaurant_count = user.restaurants.count 
-		(1..10).include?(restaurant_count) 
+		(2..10).include?(restaurant_count) 
 	end
 
 	def user_donation
 		donation_count = user.donations.count 
-		donation_count == (1||2)
+		(1..2).include?(donation_count)
 	end
 end

@@ -1,10 +1,10 @@
 class DonationsController < ApplicationController
 
-	def index
+	def index 
 	end
 
 	def new		
-  	# @donation = Donation.new
+  	@donation = Donation.new
 	end			
 
 	def credit
@@ -12,7 +12,6 @@ class DonationsController < ApplicationController
 	end
 
 	def create
-		# binding.pry
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@donation = @restaurant.donations.new(donation_params)
 	  @donation.user_id = current_user.id
@@ -27,8 +26,10 @@ class DonationsController < ApplicationController
 				format.js {}
 				format.json { render json: @restaurant, notice: "Users are only able to donate once"}
 			end
+			end
 		end
-	end
+
+
 
 	private
 

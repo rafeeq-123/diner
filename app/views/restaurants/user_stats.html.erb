@@ -9,6 +9,7 @@
 
 		<label> Credit:</label><h3><%=@donation.collect(&:amount)[0]%></h3>
 		<label> Online status:</label><h3 style="text-shadow: 2px 2px; color:#16d97e;" class="blink_me"><%=online%></h3>		
+    <label>Donations:</label><h3><%=donation_current_user_count%></h3>
 		<h3><u>How Active Are You?</u></h3>
 		      <%=activity%>
 		<h3><u> Your Number of Restaurants vs. All Users</u></h3

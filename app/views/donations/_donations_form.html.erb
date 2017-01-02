@@ -1,5 +1,7 @@
- <%= form_for([@restaurant, @restaurant.donations.build]) do |f| %>
+ <%= form_for([@restaurant, @restaurant.donations.new]) do |f| %>
  <%=f.hidden_field :amount %>
  <%=f.submit "Donate", class:"btn btn-primary btn-lg btn-block" %>
  <%end%>
+
+
 
