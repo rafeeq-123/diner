@@ -1,13 +1,9 @@
-<div class="text-center">
-		<h1><u>Congrats!</u></h1>
-		<p>Credit is not bought it is earned through activity and dovation</p>
-		<p>here at the Pop-Up app we do not like to see hard work go unrewarded!</p>
-		<p>These credits are our way of saying thank you for choosing us here na that we are nothing with our users and clients</p>
-    <% if ready_for_credit?%>
-        <!-- not ideal use of my helper method -->
-
-    <% amount = current_user.donations.find_each{|u| u.update_attributes( amount: u.amount + 5)}%>
-   <div id="add"><%=link_to "Add", amount%>
+  <div class="text-center">
+  <% if ready_for_credit?%>
+    <h1><u>Congrats!</u></h1>
+    <p>Credit is not bought it is earned through activity and dovation</p>
+    <p>here at the Pop-Up app we do not like to see hard work go unrewarded!</p>
+    <p>These credits are our way of saying thank you for choosing us here na that we are nothing with our users and clients</p>
    <%else%>
   <h1> It looks like you may have got here on accident</h1>
    <h3> Keep getting envolved!!</h3>
