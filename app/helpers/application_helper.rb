@@ -5,9 +5,12 @@ module ApplicationHelper
 	end
 
 	def ready_for_credit?
+		binding.pry
 		#only ranging max  count of instances
 		current_user_count = current_user.donations.count
-		user_signed_in? && current_user.donations.collect(&:amount)[0..current_user_count].inject(0){|sum,x| sum + x } == 0 && user_vote && user_restaurant && user_donation
+		user_signed_in? &&
+	  current_user.donations.collect(&:amount)[0..current_user_count].inject(0){|sum,x| sum + x } == 0 && 
+	  user_vote && user_restaurant && user_donation
 	end
 
 	def votes
