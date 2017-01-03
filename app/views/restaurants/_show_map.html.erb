@@ -15,8 +15,7 @@
                     });
                   }
             </script>
-            <%binding.pry%> 
-              <script src="https://maps.googleapis.com/maps/api/js?key=<%=Rails.application.secrets.google_api%>&callback=initMap" async defer>                          
+              <script src="https://maps.googleapis.com/maps/api/js?key=<%Rails.application.secrets.google_api%>&callback=initMap" async defer>                          
             </script>
           </div>
         </div>
