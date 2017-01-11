@@ -10,7 +10,7 @@ class DonationsController < ApplicationController
 	def credit
 		@donation = Donation.where(user_id: current_user.id)
 	end
-
+	
 	def create
 		@restaurant = Restaurant.find(params[:restaurant_id])
 		@donation = @restaurant.donations.new(donation_params)
@@ -28,8 +28,6 @@ class DonationsController < ApplicationController
 			end
 		end
 	end
-
-
 
 	private
 
