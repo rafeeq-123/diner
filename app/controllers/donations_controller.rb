@@ -26,8 +26,8 @@ class DonationsController < ApplicationController
 				format.js {}
 				format.json { render json: @restaurant, notice: "Users are only able to donate once"}
 			end
-			end
 		end
+	end
 
 
 
