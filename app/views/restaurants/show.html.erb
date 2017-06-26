@@ -11,8 +11,13 @@
                         <label>Likes:<div class="numberCircle text-center"><%=@restaurant.votes.count%></div></label>
                               <label>Donations:<div class="numberCircle text-center"><%=@restaurant.donations.count%>   </div></label>
                             </div>
-                          <%=render "votes/votes_form"%>
+                        <%=render "votes/votes_form"%>
                         <%=render "donations/donations_form"%>
+
+                        <%=link_to "See Comment", restaurant_comment_url(@restaurant.comments),class:"btn btn-primary btn-lg btn-block"%>
+                        <%=link_to "Comment", new_restaurant_comment_url(@restaurant), class:"btn btn-primary btn-lg btn-block"%>
+                        <%= link_to "More infomation of the diner", more_info_restaurant_url, :method => :get, class:"btn btn-primary btn-lg btn-block"%>
+
                       </div>
                     </div>
                   </section>

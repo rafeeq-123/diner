@@ -27,6 +27,10 @@ class RestaurantsController < ApplicationController
   	@donation = Donation.where(user_id: current_user.id)
 	end
 
+	def more_info
+		render "more_info"
+	end
+
 	private
 
 	def restaurant_params

@@ -1,0 +1,9 @@
+<div class="text-center">
+<h1><u>Comment</u></h1>
+<p>
+<%@restaurant.comments.each do |comment| %>
+<%= comment.title%>
+<%=comment.body%>
+<%end%>
+</p>
+</div>

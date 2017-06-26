@@ -1,0 +1,17 @@
+<div class="form-group">
+<div class="text-center">
+<h1><u>Comment</u></h1>
+<%= form_for([@restaurant, @restaurant.comments.new]) do |f|%>
+<%= f.label :title%>
+<%= f.text_field :title, title:"title", class:"form-control"%>
+<%= f.label :body, "Comment" %>
+<%= f.text_area :body, class:"form-control"%>
+ <%=f.submit "Comment", class:"btn btn-primary btn-lg btn-block form-control" %>
+
+<% end %>
+ 
+</div>
+</div>
+
+
+

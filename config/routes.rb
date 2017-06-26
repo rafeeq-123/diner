@@ -7,8 +7,10 @@ Rails.application.routes.draw do
   get "donations/credit"
   post "donations/add_credit"
   resources :restaurants do
+    resources :comments
   	resources :votes
     resources :donations
+    get "more_info", :on => :member
   end
   resources :restaurants
   devise_scope :user do

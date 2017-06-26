@@ -4,8 +4,7 @@
                <div class="table">
                    <div class="table-cell">
                      <h5 class="text-center"><%=link_to "#{restaurant.name}", restaurant_url(restaurant.id), {style: "color: white"}%></h5>
-                            <%= link_to image_tag(restaurant.avatar_url(:thumb).to_s, :class => "hover"), restaurant_url(restaurant.id), title:restaurant.name %>
-                                                           
+                            <%= link_to image_tag(restaurant.avatar_url(:thumb).to_s, :class => "hover"), restaurant_url(restaurant.id), title:restaurant.name %>                                                       
                                 </div>
                             </div>
                         </div>

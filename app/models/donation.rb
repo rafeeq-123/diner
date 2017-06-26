@@ -5,7 +5,7 @@ class Donation < ApplicationRecord
 	validates :amount, numericality: { greater_than_or_equal_to: 0 }
 
 	def ready_for_credit?
-		#only ranging max  count of instances
+		#only ranging max count of instances
 		don_countable = user.donations.count
 		user.donations.collect(&:amount)[0..don_countable].inject(0){|sum,x| sum + x } == 0 && 
 		user_vote && user_restaurant && user_donation
