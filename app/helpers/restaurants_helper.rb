@@ -62,4 +62,12 @@ module RestaurantsHelper
 		@numv = votes_count
 	end
 
+	def capacity_info
+		@capacity = @restaurant.venue_sizes.collect(&:capacity)
+	end
+
+	def availabilty_info
+		@availability = @restaurant.venue_sizes.collect(&:availability)
+	end
+
 end

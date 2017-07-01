@@ -11,6 +11,7 @@
               </div>
              </div>
             <%= form_for @restaurant, :html => {:multipart => true} do |f| %>
+
           <div>
 
       <%=f.hidden_field :name%>
@@ -37,12 +38,23 @@
    <%=f.datetime_field :event_time, class:"form-control"%> 
   </div>
 
-  <div>
-   <%=f.label :availability, "How many tickets do you have?", placeholder:"mm/dd/yyyy m:h am/pm"%>
-   <%=f.number_field :availability, class:"form-control"%> 
-   <%=f.submit "Submit", class:"btn btn-primary"%>
 
+
+<%=f.fields_for :venue_sizes do |venue_size_builder|%>
+<div>
+    <%= venue_size_builder.label :availability%> 
+   <%=  venue_size_builder.text_field :availability, class:"form-control"%>
+   </div>
+
+   <div>
+    <%= venue_size_builder.label :capacity%>
+   <%=  venue_size_builder.number_field :capacity,class:"form-control"%>   
+</div>
+
+   <%=f.submit "Submit", class:"btn btn-primary"%>
+   <%end%>
+<%end%>
   </div>
 </div>
 
-<%end%>
+

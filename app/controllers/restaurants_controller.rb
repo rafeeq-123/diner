@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
 
 	def new
 		@restaurant = Restaurant.new	
+		@restaurant.venue_sizes.build
 	end
 
 	def create
@@ -34,7 +35,7 @@ class RestaurantsController < ApplicationController
 	private
 
 	def restaurant_params
-		params.require(:restaurant).permit(:name, :description, :avatar, :address, :event_time, :availability, votes_attributes: [:id, :likes], donations_attributes: [:id, :amount])
+		params.require(:restaurant).permit(:name, :description, :avatar, :address, :event_time, :votes_attributes => [:likes], :donations_attributes => [:amount], :venue_sizes_attributes => [:availability, :capacity])
 	end
 
 	def google_api
