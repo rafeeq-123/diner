@@ -6,15 +6,16 @@
         <h1 style="color:white;"><%=@restaurant.name%></h1>
           <p><%=default_image%></p>
             <h6>Event Time: <%=@restaurant.event_time %></h6>  
-                <h5>Event Description</h5><br>
-                  <div class="border_wrapper">
-                    <p><%=@restaurant.description%></p> 
+             
                         <label>Likes:<div class="numberCircle text-center"><%=@restaurant.votes.count%></div></label>
                             <label>Donations:<div class="numberCircle text-center"><%=@restaurant.donations.count%>   </div></label>
                             <label>Capacity:<div class="numberCircle text-center"> <%=@capacity[0]%> </div></label>
                             <label>Availabity:<div class="numberCircle text-center"> <%=@availability[0]%> </div></label>
                                         
                             </div>
+                             <h5>Event Description</h5><br>
+                  <div class="border_wrapper">
+                    <p><%=@restaurant.description%></p>
 
                                         
                             </div>
